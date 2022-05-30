@@ -41,4 +41,9 @@ describe("Component ResultBox", () => {
     const output = screen.getByTestId("output");
     expect(output).toHaveTextContent("PLN 100.00 = PLN 100.00");
   });
+  it("should render proper info about conversion USD -> USD", () => {
+    render(<ResultBox from="USD" to="USD" amount={450} />);
+    const output = screen.getByTestId("output");
+    expect(output).toHaveTextContent("$450.00 = $450.00");
+  });
 });
