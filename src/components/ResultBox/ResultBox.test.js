@@ -36,4 +36,9 @@ describe("Component ResultBox", () => {
     });
     cleanup();
   }
+  it("should render proper info about conversion PLN -> PLN", () => {
+    render(<ResultBox from="PLN" to="PLN" amount={100} />);
+    const output = screen.getByTestId("output");
+    expect(output).toHaveTextContent("PLN 100.00 = PLN 100.00");
+  });
 });
